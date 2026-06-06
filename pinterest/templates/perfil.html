@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block titulo %}
+
+<h1> Esse é o perfil do:{{usuario.email}}</h1>
+
+{% endblock%}
+
+{% block body %}
+<body>
+{% include  "navbar.html" %}    
+
+<h1>esse é o perfil do:{{usuario.username}}</h1>
+
+{% if form %}
+<form action="" method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+
+    {{ form.foto() }}
+    {{ form.botao_confirmar()}}
+
+</form>
+{% endif %}
+
+
+
+<img src="{{url_for('static',filename='fotos_posts/default.png')}}"alt="">
+
+
+{% for foto in usuario.fotos %}
+    <img src="{{url_for('static',filename='fotos_posts/{}'.format(foto.imagem)) }}"alt="fotos">
+{% endfor %}
+
+</body>
+{% endblock %}
+
