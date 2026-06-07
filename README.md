@@ -1,4 +1,4 @@
-Fake Pinterest
+# Fake Pinterest
 
 Projeto desenvolvido com Flask inspirado no Pinterest, permitindo que usuários criem contas, façam login e compartilhem imagens em uma interface moderna e responsiva.
 
